@@ -31,3 +31,13 @@ type Post {
   body: String!
   author: User!
 }
+
+type Subscription {
+  count: Int!
+}
+
+enum UserRol {
+  admin
+  invitado
+  super-admin
+}

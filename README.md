@@ -24,7 +24,7 @@ posts {
   }
 ```
 
-```js
+```javascript
 author(parent, args, ctx, info) {
     return ctx.db.users.find(user => {
       return user.id === parent.author;
@@ -93,5 +93,29 @@ mutation {
     id
     name
   }
+}
+```
+
+### Probando Subscriptions
+
+```
+subscription {
+  count
+}
+```
+
+_Las suscripciones son una característica de GraphQL que permite que un servidor envíe datos a sus clientes cuando ocurre un evento específico. Las suscripciones generalmente se implementan con WebSockets. En esa configuración, el servidor mantiene una conexión estable con su cliente suscrito. Esto también rompe el "Ciclo de solicitud-respuesta" que se utilizó para todas las interacciones anteriores con la API._
+
+## Otros
+
+### Enum
+
+El campo que sea de tipo enum solo podrá contener como valor alguno de los que se ecuentren en el modelo especificado
+
+```
+enum UserRol {
+  admin
+  invitado
+  super-admin
 }
 ```
