@@ -1,5 +1,5 @@
 const Query = {
-    posts(parents, args, { db }, info) {
+    posts(parent, args, { db }, info) {
         if (!args.query) return db.posts
         return db.posts.filter((post) => {
             const titleMatch = post.title.toLowerCase().includes(args.query.toLowerCase())
